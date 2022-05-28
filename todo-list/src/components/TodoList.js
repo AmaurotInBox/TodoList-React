@@ -1,9 +1,12 @@
 import React from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 import TodoItem from "./TodoItem";
 
 export default function TodoList(props) {
     const { title, items } = props;
+    const count = items.length;
+    
     return (
         <div className="col-12">
             <Header title={title} />
@@ -14,6 +17,7 @@ export default function TodoList(props) {
                     );
                 })}
             </ul >
+            <Footer count={count}/>
         </div>
     );
 }
